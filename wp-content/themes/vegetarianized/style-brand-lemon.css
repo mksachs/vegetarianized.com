@@ -1,0 +1,16 @@
+/*----------------------------------------------------------------------------------------
+  Style for the lemon brand.
+  
+  The base color is: #E5E521
+  The link color is: #ADAA3D
+  The author comment and alert background is: #FFFFDC
+----------------------------------------------------------------------------------------*/
+
+a {
+    text-decoration: none;
+    color: #ADAA3D;
+}
+
+#comments li.bypostauthor, #alerts .alert {
+    background-color:#FFFFDC;
+}

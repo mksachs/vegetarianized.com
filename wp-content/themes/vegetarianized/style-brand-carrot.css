@@ -1,0 +1,16 @@
+/*----------------------------------------------------------------------------------------
+  Style for the carrot brand.
+  
+  The base color is: #EB6F24
+  The link color is: #EFA47B
+  The author comment and alert background is: #FFEADE
+----------------------------------------------------------------------------------------*/
+
+a {
+    text-decoration: none;
+    color: #EFA47B;
+}
+
+#comments li.bypostauthor, #alerts .alert {
+    background-color:#FFEADE;
+}

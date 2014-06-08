@@ -1,0 +1,16 @@
+/*----------------------------------------------------------------------------------------
+  Style for the eggplant brand.
+  
+  The base color is: #582261
+  The link color is: #AA50BC
+  The author comment and alert background is: #FADBFF
+----------------------------------------------------------------------------------------*/
+
+a {
+    text-decoration: none;
+    color: #AA50BC;
+}
+
+#comments li.bypostauthor, #alerts .alert {
+    background-color:#FADBFF;
+}

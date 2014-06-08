@@ -1,0 +1,16 @@
+/*----------------------------------------------------------------------------------------
+  Style for the tomato brand.
+  
+  The base color is: #AE123C
+  The link color is: #CC5C7E
+  The author comment and alert background is: #FEE7ED
+----------------------------------------------------------------------------------------*/
+
+a {
+    text-decoration: none;
+    color: #CC5C7E;
+}
+
+#comments li.bypostauthor, #alerts .alert {
+    background-color:#FEE7ED;
+}

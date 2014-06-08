@@ -1,0 +1,401 @@
+@media screen and (max-width: 568px) {
+
+    /***************************************************************************
+        Header
+    ***************************************************************************/
+    
+    #header {
+        background-image:none;
+        padding-bottom: 10%;
+        
+    }
+    #logo {
+        float:none;
+        width:100%;
+        padding-bottom:0%;
+        margin-bottom:-1%;
+    }
+    #navigation {
+        float:none;
+        width:100%;
+        padding-top:0;
+        margin-top:0;
+    }
+    .nav_item {
+        text-align:center;
+        float:right;
+        padding: 0 2.5% 0 2.5%;
+    }
+    .nav_sub_item {
+        padding:3%;
+    }
+    
+    /***************************************************************************
+        Alerts
+    ***************************************************************************/
+    
+    #alerts .alert {
+        width:100%;
+        margin: 0 0 5% 0;
+    }
+    #alerts .title {
+        /*float:left;*/
+        margin: 4% 0 4% 4%;
+    }
+
+    #alerts .message {
+        color: #606060;
+        margin: 0 4% 4% 4%;
+    }
+
+    /***************************************************************************
+        Feature
+    ***************************************************************************/
+    
+    #feature {
+        margin-top:0;
+    }
+    #feature .column1 {
+        width:100%;
+        padding-left:0;
+        margin-bottom: 3%;
+    }
+    #feature .column2 {
+        width:100%;
+        padding-left:0;
+        position:relative;
+        top:auto;
+        left:auto;
+    }
+    #feature h1 {
+        font-size:2.25em;
+        padding:0;
+        margin:0 0 2% 0;
+    }
+    #feature p.date {
+        padding:0;
+        margin:0 0 3% 0;
+        color: #606060;
+        font-size: 1.125em;
+    }
+    #feature p.caption {
+        padding:0;
+        margin:0;
+        color: #606060;
+        font-size: 1em;
+    }
+    
+    /***************************************************************************
+        Scrollers
+    ***************************************************************************/
+    
+    .scroller .scroller_content {
+        width: 85%;
+        margin-left: 7%;
+    }
+    
+    .scroller h2 {
+        margin-left: 7%;
+    }
+    
+    .scroller_left_arrow, .scroller_right_arrow {
+        width: 5.5%;
+    }
+    .scroller_left_arrow {
+        left:1%;
+        background-image:url('images/scroller_arrow_left_handheld.png');
+    }
+
+    .scroller_right_arrow {
+        left:92.5%;
+        background-image:url('images/scroller_arrow_right_handheld.png');
+    }
+    .scroller_left_arrow.hovered {
+        background-image:url('images/scroller_arrow_left_handheld.png');
+    }
+
+    .scroller_right_arrow.hovered {
+        background-image:url('images/scroller_arrow_right_handheld.png');
+    }
+
+
+    /***************************************************************************
+        Home page scrollers
+    ***************************************************************************/
+    
+    #recent {
+        /*
+        width: 88.6%;
+        margin-left: 4.5%;
+        */
+        width: 100%;
+        margin-left: 0;
+        margin-top: 3%;
+
+    }
+    #popular {
+        /*
+        width: 88.6%;
+        margin-left: 4.5%;
+        */
+        width: 100%;
+        margin-left: 0%;
+        margin-top: 1.19%;
+        margin-bottom: 5%;
+    }
+    
+    /***************************************************************************
+        Recipe
+    ***************************************************************************/
+    
+    #recipe {
+        margin-bottom: 5%;
+    }
+    #recipe .column1 {
+        width:100%;
+        max-width:100%;
+        float:none;
+        padding: 0 0 0 0;
+        margin: 0 0 4% 0;
+    }
+    #recipe .column2 {
+        width:100%;
+        max-width:100%;
+        float:none;
+        padding: 0 0 0 0;
+        margin: 0 0 4% 0;
+    }
+    #recipe .column3 {
+        width: 100%;
+        max-width:100%;
+        float:none;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+    }
+    #recipe ol {
+        padding:0 0 0 5%;
+    }
+    
+    /***************************************************************************
+        Recipe scroller
+    ***************************************************************************/
+    
+    #recipe_scroller {
+        /*
+        width: 88.6%;
+        margin-left: 4.5%;
+        */
+        width: 100%;
+        margin-left: 0%;
+        margin-bottom: 4%;
+    }
+    
+    /***************************************************************************
+        Sharing
+    ***************************************************************************/
+    
+    #share .column1 {
+        width:70%;
+        margin: 0 0 5% 0;
+    }
+    #share .column2 {
+        width:24.8%;
+        margin: 0 0 5% 0;
+    }
+    #share #print_it {
+        width:30%;
+        padding: 0 0 0 0;
+    }
+    #share #email_it {
+        width:30%;
+        padding: 0 10% 0 0;
+    }
+    
+    /***************************************************************************
+        Comments
+    ***************************************************************************/
+    
+    #comments {
+        margin-bottom: 5%;
+    }
+    #comments .column1 {
+        width:100%;
+        max-width:100%;
+        float:none;
+        padding: 0 0 0 0;
+        margin: 0 0 2% 0;
+    }
+    #comments .column2 {
+        width:100%;
+        max-width:100%;
+        float:none;
+        padding: 0 0 0 0;
+        margin: 0 0 2% 0;
+    }
+    #comments ol {
+        margin:0;
+        padding:0;
+        list-style:none;
+    }
+    #comments ol.children {
+        padding:2% 2% 0 2%;
+    }
+    
+    /***************************************************************************
+        Search Results Page
+        Category list
+    ***************************************************************************/
+    #search_results {
+        margin-bottom: 5%;
+    }
+    #search_results h1 {
+        font-size:2.25em;
+        padding:0;
+        margin:0 0 5% 0;
+    }
+    #search_results li {
+        position:relative;
+        margin:0 0 2% 0;
+        padding:0;
+    }
+    #search_results .column1 {
+        width:40%;
+        height:auto;
+        max-width:none;
+        max-height:none;
+        padding:0;
+        margin:0;
+    }
+    #search_results .column2 {
+        position:absolute;
+        top:0%;
+        /*left:263px;*/
+        left: 45%;
+        width:55%;
+        
+        /* this sets the height to be max 164px (164/1057)*/
+        padding: 0 0 28% 0;
+        
+        height:0;
+
+        max-width:none;
+        max-height:none;
+        margin:0;
+    }
+
+    #search_results .column3 {
+        display:none;
+    }
+    /***************************************************************************
+        Press Page
+    ***************************************************************************/
+    
+    #press {
+        margin-bottom: 5%;
+    }
+    #press .column1 {
+        width: 100%;
+        float:none;
+        padding: 0 0 0 0;
+        margin: 0 0 2% 0;
+    }
+    #press .column2 {
+        width: 100%;
+        float:none;
+        padding: 0 0 0 0;
+        margin: 0 0 2% 0;
+    }
+
+    #press .column3 {
+        width: 100%;
+        float:none;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+    }
+    
+    /***************************************************************************
+        Page Styling
+    ***************************************************************************/
+    
+    #page {
+        margin-bottom: 5%;
+    }
+    #page .feature_image {
+        padding: 0 0 0 0;
+        margin: 0 0 1% 0;
+    }
+    #page h1 {
+        padding: 0 0 0 0;
+        margin:0 0 1% 0;
+    }
+
+    #page h2 {
+        padding: 0 0 0 0;
+        margin:0 0 1% 0;
+    }
+    #page .credits {
+        padding: 0 0 0 0;
+        margin: 0 0 1% 0;
+    }
+    /* one column layout */
+    #page.one_column .column1 {
+        width:100%;
+        padding: 0 0 0 0;
+        margin: 5% 0 0 0;
+    }
+
+    /* two column layout */
+    #page.two_column .column1 {
+        width:100%;
+        max-width:100%;
+        float:none;
+        padding: 0 0 0 0;
+        margin: 5% 0 2% 0;
+    }
+
+    #page.two_column .column2 {
+        width:100%;
+        max-width:100%;
+        float:none;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+    }
+
+    /* three column layout */
+    #page.three_column .column1 {
+        width:100%;
+        max-width:100%;
+        float:none;
+        padding: 0 0 0 0;
+        margin: 5% 0 2% 0;
+    }
+
+    #page.three_column .column2 {
+        width:100%;
+        max-width:100%;
+        float:none;
+        padding: 0 0 0 0;
+        margin: 0 0 2% 0;
+    }
+
+    #page.three_column .column3 {
+        width:100%;
+        max-width:100%;
+        float:none;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+    }
+
+    
+    /***************************************************************************
+        Footer
+    ***************************************************************************/
+    
+    #footer {
+        width:83.6%;
+        padding-bottom:10%;
+        padding-left:0;
+        margin-left:6.8%;
+    }
+    
+}

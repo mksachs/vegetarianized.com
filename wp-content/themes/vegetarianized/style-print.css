@@ -1,0 +1,424 @@
+/*
+Theme Name: Vegetarianized
+Theme URI: 
+Author: Michael Sachs
+Author URI: 
+Description:
+Version: 1.0
+License: 
+License URI:
+Tags: 
+Text Domain: vegetarianized
+*/
+
+/* prop: top right bottom left; */
+
+body {
+    font-family: 'FuturTBooBook', Arial, sans-serif;
+    font-weight: normal;
+}
+
+#uber {
+    
+}
+
+#print_logo {
+    float:right !important;
+}
+
+/*****************************************************************************************
+    Header
+    
+*****************************************************************************************/
+
+#header {
+    display:none;
+}
+
+#logo {
+    display:none;
+}
+
+#navigation {
+    display:none;
+}
+
+/*****************************************************************************************
+    Alerts
+    
+*****************************************************************************************/
+
+#alerts {
+    display:none !important;
+}
+
+/*****************************************************************************************
+    Feature
+    
+*****************************************************************************************/
+
+#feature {
+    width:66.6% !important;
+    margin:0pt 0pt 0pt 0pt !important;
+    height:auto !important;
+}
+
+#feature .column1 {
+    display:none !important;
+    height:auto !important;
+}
+
+#feature .column2 {
+}
+
+#feature h1 {
+    font-size:36pt !important;
+    padding:0pt !important;
+    margin:0pt 0pt 10pt 0pt !important;
+}
+
+#feature p.date {
+    padding:0pt !important;
+    margin:0pt 0pt 20pt 0pt !important;
+    color: #606060 !important;
+    font-size: 16pt !important;
+}
+
+#feature p.caption {
+    padding:0pt !important;
+    margin:0pt !important;
+    color: #606060 !important;
+    font-size: 12pt !important;
+}
+
+.feature_image_bg_mask {
+    display:none !important;
+}
+
+/*****************************************************************************************
+    Scrollers
+    
+*****************************************************************************************/
+
+.scroller {
+    display:none !important;
+    padding:0pt !important;
+    margin:0pt !important;
+    height:auto !important;
+}
+
+/*****************************************************************************************
+    Recipe
+    
+*****************************************************************************************/
+
+#recipe {
+    display:block !important;
+    width:100% !important;
+    margin:40pt 0pt 0pt 0pt !important;
+    padding:0pt 0pt 0pt 0pt !important;
+}
+
+#recipe .column1 {
+    width:33.3%;
+    float:left;
+    margin:0pt 0pt 0pt 0pt;
+}
+
+#recipe .column2 {
+    width:33.3%;
+    float:left;
+    margin:0pt 0pt 0pt 0pt;
+}
+
+#recipe .column3 {
+    width:33.3%;
+    float:left;
+    margin:0pt 0pt 0pt 0pt;
+}
+
+#recipe h2 {
+    font-size:18pt;
+    padding:0pt;
+    margin:0pt 0pt 10pt 0pt;
+}
+
+#recipe p {
+    padding:0pt;
+    color: #606060;
+    font-size: 12pt;
+}
+
+#recipe li {
+    color: #606060;
+    font-size: 12pt;
+}
+
+
+/*****************************************************************************************
+    Sharing
+    
+*****************************************************************************************/
+
+#share {
+    display:none !important;
+}
+
+/*****************************************************************************************
+    Comments
+    
+*****************************************************************************************/
+
+#comments {
+    display:none !important;
+}
+
+/*****************************************************************************************
+    Search Results Page
+    
+*****************************************************************************************/
+
+#search_results {
+    display:none;
+}
+
+/*****************************************************************************************
+    Press Page
+    
+*****************************************************************************************/
+
+#press {
+    width:100%;
+}
+
+#press .column1 {
+    width:33.3%;
+    float:left;
+    padding: 37pt 0pt 0pt 0pt !important;
+}
+
+#press .column1 img {
+    display:none;
+}
+
+#press .column1 h1 a, #press .column1 h2 a {
+    color: #000000;
+}
+
+#press .column1 p a {
+    color: #606060;
+}
+
+#press .column2 {
+    width:33.3%;
+    float:left;
+    padding: 37pt 0pt 0pt 0pt !important;
+}
+
+#press .column3 {
+    width:33.3%;
+    float:left;
+    padding: 10pt 0pt 0pt 0pt !important;
+}
+
+#press p {
+    color: #606060;
+    font-size: 12pt;
+}
+
+#press h1 {
+    font-size:18pt;
+    padding:0pt;
+    margin:0pt 0pt 10pt 0pt;
+}
+
+#press h2 {
+    font-size:16pt;
+    margin:0pt 0pt 10pt 0pt;
+    padding:0pt;
+}
+
+#press  ul {
+    list-style-type: none;
+    margin:0pt;
+    padding:0pt;
+}
+
+#press li {
+    position:relative;
+    margin:0pt 0pt 10pt 0pt;
+    padding:0pt;
+    font-size:12pt;
+}
+
+/*****************************************************************************************
+    Page Styling
+    
+*****************************************************************************************/
+
+#page {
+    width:100%;
+}
+
+#page .credits {
+    padding: 0pt 0pt 0pt 0pt;
+    margin: 30pt 0pt 30pt 0pt;
+}
+
+#page img {
+    display: none !important;
+}
+
+/* one column layout */
+#page.one_column .column1 {
+    width:100%
+    /*float:left;*/
+    padding: 0pt 0pt 0pt 0pt;
+    margin: 0pt 0pt 0pt 0pt;
+}
+
+/* two column layout */
+#page.two_column .column1 {
+    width:48%;
+    float:left;
+    padding: 0pt 0pt 0pt 0pt;
+    margin: 0pt 0pt 0pt 0pt;
+}
+
+#page.two_column .column2 {
+    width:48%;
+    float:right;
+    padding: 0pt 0pt 0pt 0pt;
+    margin: 0pt 0pt 0pt 0pt;
+}
+
+/* three column layout */
+#page.three_column .column1 {
+    width:31%;
+    float:left;
+    padding: 0pt 0pt 0pt 0pt;
+    margin: 0pt 0pt 0pt 0pt;
+}
+
+#page.three_column .column2 {
+    width:33%;
+    float:left;
+    padding: 0pt 0pt 0pt 10pt;
+    margin: 0pt 0pt 46pt 0pt;
+}
+
+#page.three_column .column3 {
+    width:33%;
+    float:left;
+    padding: 0pt 0pt 0pt 10pt;
+    margin: 0pt 0pt 46pt 0pt;
+}
+
+#page .feature_image {
+    display: none !important;
+}
+
+#page p {
+    color: #606060;
+    font-size: 12pt;
+}
+
+#page h1 {
+    font-size:24pt;
+    padding: 0pt 0pt 0pt 0pt;
+    margin:0pt 0pt 10pt 0pt;
+}
+
+#page h2 {
+    font-size:18pt;
+    padding: 0pt 0pt 0pt 0pt;
+    margin:0pt 0pt 10pt 0pt;
+}
+
+#page h3 {
+    font-size:14pt;
+    padding: 0pt 0pt 0pt 0pt;
+    margin: 0pt 0pt 5pt 0pt;
+}
+
+/*****************************************************************************************
+    Footer
+    
+*****************************************************************************************/
+
+#footer {
+    width:100%;
+    clear:both;
+    padding:40pt 0pt 0pt 0pt !important;
+}
+
+#footer p {
+    width:66.6%;
+    color: #606060;
+    font-size: 9pt;
+    padding:10pt 0pt 0pt 0pt;
+    margin:0pt;
+}
+
+#footer_rule {
+    width:100%;
+    border-top:solid #B2B2B2 1pt;
+    
+}
+
+
+/*****************************************************************************************
+    Global
+    
+*****************************************************************************************/
+
+.link {
+    display:none;   
+}
+
+.overlay {
+    background: #FFFFFF;
+    opacity: 0.5;
+}
+
+.title {
+    font-family: 'FuturTLigLight', Arial, sans-serif;
+    color: #000000;
+    font-size: 36pt;
+}
+
+.date {
+    font-family: 'FuturTLigLight', Arial, sans-serif;
+    color: #606060;
+    font-size: 18pt;
+}
+
+/*
+.caption, .information, .ingredients, .preparation, .message {
+    font-family: 'FuturTBooBook', Arial, sans-serif;
+    color: #606060;
+    font-size: 16pt;
+}
+*/
+
+h1, h2, h3 {
+    font-family: 'FuturTLigLight', Arial, sans-serif;
+    font-weight: normal;
+    /*
+    color: #000000;
+    font-size: 24pt;
+    padding-top:0pt;
+    margin-top:0pt;
+    */
+}
+
+a {
+    text-decoration: none;
+    color: #f42c62;
+}
+
+
+
+
+
+
