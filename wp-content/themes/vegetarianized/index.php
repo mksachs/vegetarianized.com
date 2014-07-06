@@ -120,8 +120,11 @@ get_header(); ?>
         </div>
     </div>
 
+<!-- Sidebar -->
+<div id="sidebar">
 <?php if ( is_active_sidebar( 'googleanalytics_sidebar' ) ) : ?>
     <?php dynamic_sidebar( 'googleanalytics_sidebar' ); ?>
 <?php endif; ?>
+</div>
 
 <?php get_footer(); ?>
