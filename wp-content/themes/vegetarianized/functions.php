@@ -798,3 +798,19 @@ function vegetarianized_comment( $comment, $args, $depth ) {
 		break;
 	endswitch; // end comment_type check
 }
+
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function googleanalytics_widgets_init() {
+    register_sidebar(array(
+        'name' => __( 'Google Analytics Sidebar', 'googleanalytics' ),
+        'id' => 'googleanalytics_sidebar',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h4>',
+        'after_title' => '</h4>',
+    ));
+}
+add_action( 'init', 'googleanalytics_widgets_init' );

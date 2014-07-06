@@ -42,6 +42,10 @@ body {
     display:none;
 }
 
+#googleanalytics_sidebar {
+    display:none;
+}
+
 #header, #feature, #recipe, #share, #comments, #search_results, #press, #page, #not_found, #recent, #popular, #alerts  {
     /* the width and left margin of most content */
     width:83.6%;
