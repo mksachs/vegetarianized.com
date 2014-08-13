@@ -108,10 +108,16 @@ $logo_print_image =  get_template_directory_uri()."/images/vegetarianized_logo_"
                                 </div>
                             </div>
                         <!--<a href="<?php echo wp_login_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/email_follow.png" /></a></li>-->
+                        <!--
                         <li><div class="fb-follow" data-href="http://www.facebook.com/vegetarianized" data-colorscheme="light" data-layout="button_count" data-show-faces="false"></div></li>
+                        -->
+                        <!--
                         <li><a href="https://twitter.com/Vegetarianized" class="twitter-follow-button" data-show-count="true" data-show-screen-name="false" data-dnt="true">Follow @Vegetarianized</a>
                             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
                         </li>
+                        -->
+                        <?php echo do_shortcode("[shareaholic app='follow_buttons' id='7515554']"); ?>
+
                     </ul>
                 </div>
             </div>
