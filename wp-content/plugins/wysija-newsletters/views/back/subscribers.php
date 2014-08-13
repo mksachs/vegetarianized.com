@@ -182,28 +182,41 @@ class WYSIJA_view_back_subscribers extends WYSIJA_view_back
 	    </div>
 
 	    <div class="alignleft actions">
-		<select name="wysija[filter][filter_list]" class="global-filter mp-select-sort">
-		    <option selected="selected" value=""><?php _e('View all lists', WYSIJA); ?></option>
+		<select name="wysija[filter][filter_list]" class="global-filter">
 	<?php
+	$is_list_pre_selected = false;
+        $options_list = '';
 	foreach ($data['lists'] as $listK => $list)
 	{
-	    $selected = "";
-	    if (isset($_REQUEST['wysija']['filter']['filter_list']) && $_REQUEST['wysija']['filter']['filter_list'] == $listK)
-		$selected = ' selected="selected" ';
+			$selected = '';
+			if (in_array($listK, $data['selected_lists'])) {
+				$selected = ' selected="selected" ';
+				$is_list_pre_selected = true;
+			}
 	    if (isset($list['users']))
-		echo '<option '.$selected.' value="'.$list['list_id'].'">'.$list['name'].' ('.$list['users'].')'.'</option>';
+		$options_list .= '<option '.$selected.' value="'.$list['list_id'].'">'.$list['name'].' ('.$list['users'].')'.'</option>';
 	    else
-		echo '<option '.$selected.' value="'.$list['list_id'].'">'.$list['name'].'</option>';
+		$options_list .= '<option '.$selected.' value="'.$list['list_id'].'">'.$list['name'].'</option>';
 	}
+
 	?>
-	<?php
-	$orphaned_selected = '';
-	if (isset($_REQUEST['wysija']['filter']['filter_list']) && $_REQUEST['wysija']['filter']['filter_list'] === 'orphaned')
-	{
-	    $orphaned_selected = ' selected="selected" ';
-	}
-	?>
-		    <option <?php echo $orphaned_selected; ?> value="orphaned"><?php _e('Subscribers in no list', WYSIJA); ?></option>
+
+                    <?php
+                        // Now, if there is not any selected list, let's select "View all lists" by default.
+                        $selected = in_array('', $data['selected_lists']) ? ' selected="selected" ' : '';
+                    ?>
+			<option <?php echo $selected; ?> data-sort='0' value=""><?php _e('View all lists', WYSIJA); ?></option>
+                    <?php
+                        $selected = in_array('orphaned', $data['selected_lists']) ? ' selected="selected" ' : '';
+			if (in_array('orphaned', $data['selected_lists'])) {
+				$selected = ' selected="selected" ';
+				$is_list_pre_selected = true;
+			}
+                    ?>
+                    <option <?php echo $selected; ?> value="orphaned" data-sort='0'><?php _e('Subscribers in no list', WYSIJA); ?></option>
+
+
+                        <?php echo $options_list; ?>
 		</select>
 		<input type="submit" class="filtersubmit button-secondary action" name="doaction" value="<?php echo esc_attr(__('Filter', WYSIJA)); ?>">
 	    </div>
@@ -258,8 +271,8 @@ class WYSIJA_view_back_subscribers extends WYSIJA_view_back
 		    $header .='<th class="manage-column column-list-names" id="list-list" scope="col">'.__('Lists', WYSIJA).'</th>';
 		    $header .='<th class="manage-column column-status'.$status_sorting.'" id="status" scope="col" style="width:80px;"><a href="#" class="orderlink" ><span>'.__('Status', WYSIJA).'</span><span class="sorting-indicator"></span></a></th>';
 		    $header .= '<th class="manage-column column-date'.$created_at_sorting.'" id="created_at" scope="col"><a href="#" class="orderlink" ><span>'.__('Subscribed on', WYSIJA).'</span><span class="sorting-indicator"></span></a></th>';
-		    // $header .= '<th class="manage-column column-date' . $last_opened_sorting . '" id="last_opened" scope="col"><a href="#" class="orderlink" ><span>' . __('Last open', WYSIJA) . '</span><span class="sorting-indicator"></span></a></th>';
-		    // $header .= '<th class="manage-column column-date' . $last_clicked_sorting . '" id="last_clicked" scope="col"><a href="#" class="orderlink" ><span>' . __('Last click', WYSIJA) . '</span><span class="sorting-indicator"></span></a></th>';
+		    $header .= '<th class="manage-column column-date' . $last_opened_sorting . '" id="last_opened" scope="col"><a href="#" class="orderlink" ><span>' . __('Last open', WYSIJA) . '</span><span class="sorting-indicator"></span></a></th>';
+		    $header .= '<th class="manage-column column-date' . $last_clicked_sorting . '" id="last_clicked" scope="col"><a href="#" class="orderlink" ><span>' . __('Last click', WYSIJA) . '</span><span class="sorting-indicator"></span></a></th>';
 
 		    $header .= '</tr>';
 		    echo $header;
@@ -337,8 +350,8 @@ class WYSIJA_view_back_subscribers extends WYSIJA_view_back
 	    ?></td>
 	        <td><?php echo $statuses[$row['status']]; ?></td>
 	        <td><?php echo $this->fieldListHTML_created_at($row['created_at']) ?></td>
-	        <!--td><?php // echo $this->fieldListHTML_created_at($row['last_opened']) ?></td-->
-	        <!--td><?php // echo $this->fieldListHTML_created_at($row['last_clicked']) ?></td-->
+	        <td><?php echo $this->fieldListHTML_created_at($row['last_opened']) ?></td>
+	        <td><?php echo $this->fieldListHTML_created_at($row['last_clicked']) ?></td>
 	        </tr><?php
 			$alt = !$alt;
 		    }

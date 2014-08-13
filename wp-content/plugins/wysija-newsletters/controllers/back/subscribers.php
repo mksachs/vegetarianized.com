@@ -15,7 +15,7 @@ class WYSIJA_control_back_subscribers extends WYSIJA_control_back{
      * OR - users who never opened or clicked AND received at least 1 newsletter.
      * @var boolean
      */
-    var $_filter_by_inactive_users = false;
+    var $_filter_by_inactive_users = true;
 
     function WYSIJA_control_back_subscribers(){
 	WYSIJA_control_back::WYSIJA_control_back();
@@ -145,6 +145,22 @@ class WYSIJA_control_back_subscribers extends WYSIJA_control_back{
     }
 
 
+    /**
+     * Get selected lists
+     * @return array
+     */
+    protected function get_selected_lists() {
+        $result = array();
+        if (isset($_REQUEST['wysija']['filter']['filter_list'])) {
+            $result[] = $_REQUEST['wysija']['filter']['filter_list'];
+        } elseif (!empty($_REQUEST['filter-list'])) {
+            $lists = explode(',', trim($_REQUEST['filter-list']));// currently, only single list is allowed.
+            if (!empty($lists)) {
+                $result = array_merge ($result, $lists);
+            }
+        }
+        return $result;
+    }
 
     function defaultDisplay(){
         $this->viewShow=$this->action='main';
@@ -174,6 +190,7 @@ class WYSIJA_control_back_subscribers extends WYSIJA_control_back{
 
         // count the rows based on the filters
         $filters = $this->modelObj->detect_filters();
+
         $select = array( 'COUNT(DISTINCT([wysija]user.user_id)) as total_users', 'MAX([wysija]user.created_at) as max_create_at');
         $count_rows = $this->modelObj->get_subscribers( $select, $filters);
 
@@ -204,6 +221,7 @@ class WYSIJA_control_back_subscribers extends WYSIJA_control_back{
 
         $this->data['current_counts'] = $this->modelObj->countRows;
         $this->data['show_batch_select'] = ($this->modelObj->limit >= $this->modelObj->countRows) ? false : true;
+        $this->data['selected_lists'] = $this->get_selected_lists();
         $this->modelObj->reset();
 
 
@@ -345,7 +363,7 @@ class WYSIJA_control_back_subscribers extends WYSIJA_control_back{
             $this->notice(sprintf(__('%1$s subscribers have been added to "%2$s".',WYSIJA),$this->_affected_rows,$result['name']));
         else
             $this->notice(sprintf(__('%1$s subscriber have been added to "%2$s".',WYSIJA),$this->_affected_rows,$result['name']));
-        $this->redirect('admin.php?page=wysija_subscribers&filter-list='.$data['listid']);
+        $this->redirect_after_bulk_action();
     }
 
     /**
@@ -371,8 +389,22 @@ class WYSIJA_control_back_subscribers extends WYSIJA_control_back{
             $this->notice(sprintf(__('%1$s subscriber have been moved to "%2$s".',WYSIJA), $this->_affected_rows, $result['name']));
         }
 
-        $this->redirect('admin.php?page=wysija_subscribers&filter-list='.$data['listid']);
+        $this->redirect_after_bulk_action();
     }
+
+	/**
+	 * After performing a bulk action, let's keep the current list filter
+	 */
+	protected function redirect_after_bulk_action() {
+		$filter_list = !empty($_REQUEST['wysija']['filter']['filter_list']) ? $_REQUEST['wysija']['filter']['filter_list'] : 0;
+		if (empty($filter_list)) {// view all lists
+			$this->redirect('admin.php?page=wysija_subscribers');
+		} elseif (is_numeric($filter_list)) {
+			$this->redirect('admin.php?page=wysija_subscribers&filter-list='.$filter_list);
+		} else {// subscribers in no list
+			$this->redirect('admin.php?page=wysija_subscribers&filter-list=orphaned');
+		}
+	}
 
     /**
      * Bulk action remove subscribers from all existing lists
@@ -389,7 +421,7 @@ class WYSIJA_control_back_subscribers extends WYSIJA_control_back{
             $this->notice(sprintf(__('%1$s subscribers have been removed from all existing lists.',WYSIJA),$this->_affected_rows));
         else
             $this->notice(sprintf(__('%1$s subscriber have been removed from all existing lists.',WYSIJA),$this->_affected_rows));
-        $this->defaultDisplay();
+        $this->redirect_after_bulk_action();
     }
 
     /**
@@ -409,7 +441,8 @@ class WYSIJA_control_back_subscribers extends WYSIJA_control_back{
             $this->notice(sprintf(__('%1$s subscribers have been removed from "%2$s".',WYSIJA),$this->_affected_rows, $result['name']));
         else
             $this->notice(sprintf(__('%1$s subscriber have been removed from "%2$s".',WYSIJA),$this->_affected_rows, $result['name']));
-        $this->redirect('admin.php?page=wysija_subscribers&filter-list='.$data['listid']);
+
+		$this->redirect_after_bulk_action();
     }
 
     /**
@@ -426,7 +459,7 @@ class WYSIJA_control_back_subscribers extends WYSIJA_control_back{
             $this->notice(sprintf(__('%1$s subscribers have been confirmed.',WYSIJA),$this->_affected_rows));
         else
             $this->notice(sprintf(__('%1$s subscriber have been confirmed.',WYSIJA),$this->_affected_rows));
-        $this->defaultDisplay();
+        $this->redirect_after_bulk_action();
     }
 
     /**
@@ -717,7 +750,6 @@ class WYSIJA_control_back_subscribers extends WYSIJA_control_back{
 	$this->jsTrans['subscribers_import_match_confirmation_1'] = __('The selected value is already matched to another column.', WYSIJA);
 	$this->jsTrans['subscribers_import_match_confirmation_2'] = __('Can you confirm that this column is corresponding to that field?', WYSIJA);
         $this->js[] = 'wysija-validator';
-	wp_enqueue_script('jquery-matchColumn', WYSIJA_URL.'js/jquery/jquery.matchColumn.js', array('jquery'), WYSIJA::get_version());
         $helper_numbers = WYSIJA::get('numbers','helper');
         $bytes = $helper_numbers->get_max_file_upload();
 
@@ -738,6 +770,13 @@ class WYSIJA_control_back_subscribers extends WYSIJA_control_back{
 
         if($this->data === false) $this->redirect('admin.php?page=wysija_subscribers&action=import');
 
+		$model_config = WYSIJA::get('config', 'model');
+		$this->jsTrans['userStatuses'] = array(
+			-1 => __('Unsubscribed', WYSIJA),
+			0 => $model_config->getValue('confirm_dbleoptin') ? __('Unconfirmed',WYSIJA) : __('Subscribed',WYSIJA),
+			1 => __('Subscribed',WYSIJA)
+		);
+		$this->js[] = 'wysija-import-match';
         $this->viewObj->title=__('Import Subscribers',WYSIJA);
         $this->viewShow='importmatch';
 
@@ -941,7 +980,7 @@ class WYSIJA_control_back_subscribers extends WYSIJA_control_back{
 
         // make sure the total count of subscribers is updated
         $helper_user->refreshUsers();
-        $this->redirect();
+        $this->redirect_after_bulk_action();
     }
 
      /**
