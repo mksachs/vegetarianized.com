@@ -117,7 +117,7 @@ $logo_print_image =  get_template_directory_uri()."/images/vegetarianized_logo_"
                         </li>
                         -->
                         <li>
-                        <?php echo do_shortcode("[shareaholic app='follow_buttons' id='7452915']"); ?>
+                        <?php echo do_shortcode("[shareaholic app='follow_buttons' id='7515554']"); ?>
                         </li>
 
                     </ul>
