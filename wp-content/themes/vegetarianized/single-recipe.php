@@ -134,7 +134,7 @@
     <div id="share">
         <div class="column1">
 
-            <?php echo do_shortcode("[shareaholic app=\"share_buttons\" id=\"7452915\"]"); ?>
+            <?php echo do_shortcode("[shareaholic app='share_buttons' id='7452915']"); ?>
 
             <!-- Facebook 
             <div class="fb-like" data-href="<?php echo get_permalink($post->ID); ?>" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
