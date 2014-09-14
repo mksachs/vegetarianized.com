@@ -58,10 +58,10 @@ $logo_print_image =  get_template_directory_uri()."/images/vegetarianized_logo_"
                 ?><a href="<?php echo $press_page_link ?>">Press</a>
             </div>
             <div class="nav_item">
-                Search
-                <div class="nav_sub_item">
-                    <?php get_search_form(); ?>
-                </div>
+                <?php
+                    $why_page = get_page_by_title('Why');
+                    $why_page_link = get_permalink($why_page->ID);
+                ?><a href="<?php echo $why_page_link ?>">Why</a>
             </div>
             <div class="nav_item">
                 Subscribe
@@ -69,7 +69,12 @@ $logo_print_image =  get_template_directory_uri()."/images/vegetarianized_logo_"
                     <iframe width="100%" scrolling="no" frameborder="0" src="http://www.vegetarianized.com/?wysija-page=1&controller=subscribers&action=wysija_outter&wysija_form=3&external_site=1&wysijap=subscriptions" class="iframe-wysija" vspace="0" tabindex="0" style="position: static; top: 0pt; margin: 0px; border-style: none; height: 120px; left: 0pt; visibility: visible;" marginwidth="0" marginheight="0" hspace="0" allowtransparency="true" title="Subscription MailPoet"></iframe>
                 </div>
             </div>
-
+            <div class="nav_item">
+                Search
+                <div class="nav_sub_item">
+                    <?php get_search_form(); ?>
+                </div>
+            </div>
             <!--
             <div class="nav_item">
                 Social Media
@@ -133,12 +138,6 @@ $logo_print_image =  get_template_directory_uri()."/images/vegetarianized_logo_"
                 </div>
             </div>
             -->
-            <div class="nav_item">
-                <?php
-                    $why_page = get_page_by_title('Why');
-                    $why_page_link = get_permalink($why_page->ID);
-                ?><a href="<?php echo $why_page_link ?>">Why</a>
-            </div>
             <div class="nav_item">
                 Recipes
                 <div class="nav_sub_item">
