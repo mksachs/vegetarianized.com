@@ -43,6 +43,7 @@ $logo_print_image =  get_template_directory_uri()."/images/vegetarianized_logo_"
     <div id="header">
         <div id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo $logo_image ?>" /></a></div>
         <!--<div id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php header_image(); ?>" /></a></div>-->
+        <div id="header-social"><?php echo do_shortcode("[shareaholic app='follow_buttons' id='7527394']"); ?></div>
         <div id="navigation">
             <div class="nav_item">
                 <?php
@@ -62,6 +63,7 @@ $logo_print_image =  get_template_directory_uri()."/images/vegetarianized_logo_"
                     <?php get_search_form(); ?>
                 </div>
             </div>
+            <!--
             <div class="nav_item">
                 Social Media
                 <div class="nav_sub_item">
@@ -73,8 +75,8 @@ $logo_print_image =  get_template_directory_uri()."/images/vegetarianized_logo_"
                                 echo '<li>';
                             }
                         ?>
-                            <div class="email_follow"> <!-- #widget -->
-                                <div class="email_follow_button"> <!-- .btn-o -->
+                            <div class="email_follow"> <!~~ #widget ~~>
+                                <div class="email_follow_button"> <!~~ .btn-o ~~>
                                     <?php
                                         if ( is_front_page() ) {
                                             $login_redirect = home_url( '/' );
@@ -90,16 +92,16 @@ $logo_print_image =  get_template_directory_uri()."/images/vegetarianized_logo_"
                                             $img_src = get_template_directory_uri().'/images/email_follow.png';
                                             $a_href = esc_url( wp_login_url( $login_redirect ) );
                                         }
-                                        echo '<a class="button" title="'.$a_title.'" href="'.$a_href.'"> <!-- #follow-button .btn -->';
-                                        echo '  <img src="'.$img_src.'" /> <!-- i -->';
+                                        echo '<a class="button" title="'.$a_title.'" href="'.$a_href.'"> <!~~ #follow-button .btn ~~>';
+                                        echo '  <img src="'.$img_src.'" /> <!~~ i ~~>';
                                     ?>
                                         <span class="label">Subscribe</span>
                                     </a>
                                 </div>
-                                <div class="email_follow_count"> <!-- #c .count-o -->
+                                <div class="email_follow_count"> <!~~ #c .count-o ~~>
                                     <i></i>
                                     <u></u>
-                                    <a class="note" href=""> <!-- #count -->
+                                    <a class="note" href=""> <!~~ #count ~~>
                                         <?php
                                             $result = count_users();
                                             echo $result['total_users'].' subscribers';
@@ -107,15 +109,15 @@ $logo_print_image =  get_template_directory_uri()."/images/vegetarianized_logo_"
                                     </a>
                                 </div>
                             </div>
-                        <!--<a href="<?php echo wp_login_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/email_follow.png" /></a></li>-->
-                        <!--
+                        <!~~<a href="<?php echo wp_login_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/email_follow.png" /></a></li>~~>
+                        <!~~
                         <li><div class="fb-follow" data-href="http://www.facebook.com/vegetarianized" data-colorscheme="light" data-layout="button_count" data-show-faces="false"></div></li>
-                        -->
-                        <!--
+                        ~~>
+                        <!~~
                         <li><a href="https://twitter.com/Vegetarianized" class="twitter-follow-button" data-show-count="true" data-show-screen-name="false" data-dnt="true">Follow @Vegetarianized</a>
                             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
                         </li>
-                        -->
+                        ~~>
                         <li>
                         <?php echo do_shortcode("[shareaholic app='follow_buttons' id='7527394']"); ?>
                         </li>
@@ -123,6 +125,7 @@ $logo_print_image =  get_template_directory_uri()."/images/vegetarianized_logo_"
                     </ul>
                 </div>
             </div>
+            -->
             <div class="nav_item">
                 <?php
                     $why_page = get_page_by_title('Why');
