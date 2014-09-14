@@ -66,7 +66,7 @@ $logo_print_image =  get_template_directory_uri()."/images/vegetarianized_logo_"
             <div class="nav_item">
                 Subscribe
                 <div class="nav_sub_item">
-                    <iframe width="100%" scrolling="no" frameborder="0" src="http://www.vegetarianized.com/?wysija-page=1&controller=subscribers&action=wysija_outter&wysija_form=3&external_site=1&wysijap=subscriptions" class="iframe-wysija" vspace="0" tabindex="0" style="position: static; top: 0pt; margin: 0px; border-style: none; height: 150px; left: 0pt; visibility: visible;" marginwidth="0" marginheight="0" hspace="0" allowtransparency="true" title="Subscription MailPoet"></iframe>
+                    <iframe width="100%" scrolling="no" frameborder="0" src="http://www.vegetarianized.com/?wysija-page=1&controller=subscribers&action=wysija_outter&wysija_form=3&external_site=1&wysijap=subscriptions" class="iframe-wysija" vspace="0" tabindex="0" style="position: static; top: 0pt; margin: 0px; border-style: none; height: 120px; left: 0pt; visibility: visible;" marginwidth="0" marginheight="0" hspace="0" allowtransparency="true" title="Subscription MailPoet"></iframe>
                 </div>
             </div>
 
