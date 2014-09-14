@@ -63,6 +63,17 @@ $logo_print_image =  get_template_directory_uri()."/images/vegetarianized_logo_"
                     <?php get_search_form(); ?>
                 </div>
             </div>
+            <div class="nav_item">
+                Subscribe
+                <div class="nav_sub_item">
+                    <ul>
+                        <li>
+                        <?php echo do_shortcode("[wysija_form id=\"3\"]"); ?>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
             <!--
             <div class="nav_item">
                 Social Media
