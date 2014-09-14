@@ -80,7 +80,7 @@ body {
 }
 
 #header-social {
-    /*float:left;*/
+    display:none;
 }
 
 #navigation {
