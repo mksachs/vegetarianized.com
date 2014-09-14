@@ -42,6 +42,7 @@ $logo_print_image =  get_template_directory_uri()."/images/vegetarianized_logo_"
     <div id="print_logo"><object type="image/svg+xml" width="192" height="32" data="<?php echo $logo_print_image ?>">Your browser does not support SVG</object></div>
     <div id="header">
         <div id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo $logo_image ?>" /></a></div>
+        <div id="header-social"><?php echo do_shortcode("[shareaholic app='follow_buttons' id='7527394']"); ?></div>
         <!--<div id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php header_image(); ?>" /></a></div>-->
         <div id="navigation">
             <div class="nav_item">
@@ -140,7 +141,6 @@ $logo_print_image =  get_template_directory_uri()."/images/vegetarianized_logo_"
                 </div>
             </div>
         </div>
-        <div id="header-social"><?php echo do_shortcode("[shareaholic app='follow_buttons' id='7527394']"); ?></div>
     </div>
 
 
