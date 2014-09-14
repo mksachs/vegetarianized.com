@@ -66,42 +66,7 @@ $logo_print_image =  get_template_directory_uri()."/images/vegetarianized_logo_"
             <div class="nav_item">
                 Subscribe
                 <div class="nav_sub_item">
-                    <!--START Scripts : this is the script part you can add to the header of your theme-->
-<script type="text/javascript" src="http://www.vegetarianized.com/wp-includes/js/jquery/jquery.js?ver=2.6.11"></script>
-<script type="text/javascript" src="http://www.vegetarianized.com/wp-content/plugins/wysija-newsletters/js/validate/languages/jquery.validationEngine-en.js?ver=2.6.11"></script>
-<script type="text/javascript" src="http://www.vegetarianized.com/wp-content/plugins/wysija-newsletters/js/validate/jquery.validationEngine.js?ver=2.6.11"></script>
-<script type="text/javascript" src="http://www.vegetarianized.com/wp-content/plugins/wysija-newsletters/js/front-subscribers.js?ver=2.6.11"></script>
-<script type="text/javascript">
-                /* <![CDATA[ */
-                var wysijaAJAX = {"action":"wysija_ajax","controller":"subscribers","ajaxurl":"http://www.vegetarianized.com/wp-admin/admin-ajax.php","loadingTrans":"Loading..."};
-                /* ]]> */
-                </script><script type="text/javascript" src="http://www.vegetarianized.com/wp-content/plugins/wysija-newsletters/js/front-subscribers.js?ver=2.6.11"></script>
-<!--END Scripts-->
-
-<div class="widget_wysija_cont html_wysija"><div id="msg-form-wysija-html54160ccbd320f-3" class="wysija-msg ajax"></div><form id="form-wysija-html54160ccbd320f-3" method="post" action="#wysija" class="widget_wysija html_wysija"><div class="wysija-msg"><div class="notice-msg updated"><ul><li>Your form has been saved.</li></ul></div></div><div class="wysija-msg ajax"></div><input type="hidden" value="f760f502c3" id="wysijax" />
-<p class="wysija-paragraph">
-    <label>Email <span class="wysija-required">*</span></label>
-    
-    	<input type="text" name="wysija[user][email]" class="wysija-input validate[required,custom[email]]" title="Email"  value="" />
-    
-    
-    
-    <span class="abs-req">
-        <input type="text" name="wysija[user][abs][email]" class="wysija-input validated[abs][email]" value="" />
-    </span>
-    
-</p>
-<input class="wysija-submit wysija-submit-field" type="submit" value="Subscribe!" />
-
-    <input type="hidden" name="form_id" value="3" />
-    <input type="hidden" name="action" value="save" />
-    <input type="hidden" name="controller" value="subscribers" />
-    <input type="hidden" value="1" name="wysija-page" />
-
-    
-        <input type="hidden" name="wysija[user_list][list_ids]" value="3" />
-    
- </form></div>
+                    <iframe width="100%" scrolling="no" frameborder="0" src="http://www.vegetarianized.com/?wysija-page=1&controller=subscribers&action=wysija_outter&wysija_form=3&external_site=1&wysijap=subscriptions" class="iframe-wysija" vspace="0" tabindex="0" style="position: static; top: 0pt; margin: 0px; border-style: none; height: 120px; left: 0pt; visibility: visible;" marginwidth="0" marginheight="0" hspace="0" allowtransparency="true" title="Subscription MailPoet"></iframe>
                 </div>
             </div>
 
