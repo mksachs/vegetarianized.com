@@ -79,6 +79,10 @@ body {
     width:100%;
 }
 
+#header-social {
+    float:right;
+}
+
 #navigation {
     float:right;
     margin-top:9.75%;
