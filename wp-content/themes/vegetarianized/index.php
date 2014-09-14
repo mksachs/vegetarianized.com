@@ -81,7 +81,7 @@ get_header(); ?>
 <!-- The popular items scroller -->
 <?php
     $args = array(
-        'numberposts'   => 10,
+        'numberposts'   => 12,
         'post_type'     => 'recipe',
         'orderby'       => 'meta_value_num',
         'meta_key'      => 'recipe_views_count',
