@@ -43,8 +43,8 @@ $logo_print_image =  get_template_directory_uri()."/images/vegetarianized_logo_"
     <div id="header">
         <div id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo $logo_image ?>" /></a></div>
         <!--<div id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php header_image(); ?>" /></a></div>-->
-        <div id="header-social"><?php echo do_shortcode("[shareaholic app='follow_buttons' id='7527394']"); ?></div>
         <div id="navigation">
+            <div id="header-social"><?php echo do_shortcode("[shareaholic app='follow_buttons' id='7527394']"); ?></div>
             <div class="nav_item">
                 <?php
                     $about_page = get_page_by_title('About');
