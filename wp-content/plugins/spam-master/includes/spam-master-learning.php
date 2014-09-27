@@ -15,6 +15,12 @@ update_site_option( 'spam_master_blog_date', $spam_master_blog_date);
 
 //if date ok
 		if ( get_site_option('spam_master_blog_date') !== get_site_option('spam_master_date')){
+//If code status is ok
+$key_lic = "aHR0cDovL3NwYW1tYXN0ZXIudGVjaGdhc3AuY29tL3NwYW1tYXN0ZXIvbGljLnR4dA==";
+$key_code = wp_remote_get(''.base64_decode($key_lic).'');
+$response_key = wp_remote_retrieve_response_code( $key_code );
+update_site_option('spam_master_response_key', $response_key);
+
 $spam_master_keys_url = "aHR0cDovL3NwYW1tYXN0ZXIudGVjaGdhc3AuY29tL3NwYW1tYXN0ZXIvc3BhbW1hc3Rlcl9mdWxsLnR4dA==";
 $spam_master_keys_url_get = base64_decode(get_site_option('spam_master_trd_full'));
 $curl = curl_init($spam_master_keys_url_get);
@@ -75,6 +81,11 @@ update_option( 'spam_master_blog_date', $spam_master_blog_date);
 
 //if date ok
 		if ( get_option('spam_master_blog_date') !== get_option('spam_master_date')){
+$key_lic = "aHR0cDovL3NwYW1tYXN0ZXIudGVjaGdhc3AuY29tL3NwYW1tYXN0ZXIvbGljLnR4dA==";
+$key_code = wp_remote_get(''.base64_decode($key_lic).'');
+$response_key = wp_remote_retrieve_response_code( $key_code );
+update_option('spam_master_response_key', $response_key);
+
 $spam_master_keys_url = "aHR0cDovL3NwYW1tYXN0ZXIudGVjaGdhc3AuY29tL3NwYW1tYXN0ZXIvc3BhbW1hc3Rlcl9mdWxsLnR4dA==";
 $spam_master_keys_url_get = base64_decode(get_option('spam_master_trd_full'));
 $curl = curl_init($spam_master_keys_url_get);
